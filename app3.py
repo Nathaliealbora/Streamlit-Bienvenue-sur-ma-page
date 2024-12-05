@@ -42,13 +42,23 @@ def show_dashboard():
         st.write("Bienvenue sur la page d'accueil de l'application.")
     elif selection == "Photos":
         st.title("Album photo")
-        st.image("https://static.streamlit.io/examples/cat.jpg", caption="Un chat")
-        st.image("https://static.streamlit.io/examples/dog.jpg", caption="Un chien")
-        st.image("https://static.streamlit.io/examples/owl.jpg", caption="Un hibou")
+        show_cat_images() 
     elif selection == "Profil":
         st.title("Mon Profil")
         st.write(f"Nom: {st.session_state['username']}")
         st.write(f"Email: {df[df['name'] == st.session_state['username']]['email'].values[0]}")
+
+def show_cat_images():
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.image("images/chat1.jpg", caption="Chat 1")
+    
+    with col2:
+        st.image("images/chat2.jpg", caption="Chat 2")
+    
+    with col3:
+        st.image("images/chat3.jpg", caption="Chat 3")
 
 def sidebar_menu():
     with st.sidebar:
