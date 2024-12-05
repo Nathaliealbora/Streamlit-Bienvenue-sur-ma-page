@@ -73,4 +73,3 @@ def sidebar_menu():
 
 if __name__ == "__main__":
     login()
-
